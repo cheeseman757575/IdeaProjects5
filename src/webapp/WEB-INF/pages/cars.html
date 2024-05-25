@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cars</title>
+    <title>Cars List</title>
 </head>
 <body>
-I CREATED FIVE CARS!
-
-<a href="/">Say Hello</a>
+<h1>Cars List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>VIN Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Thymeleaf для отображения списка машин -->
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.brand}">Brand</td>
+        <td th:text="${car.model}">Model</td>
+        <td th:text="${car.vinNumber}">VIN Number</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
